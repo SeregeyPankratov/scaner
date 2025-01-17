@@ -7,8 +7,8 @@
     >
       <AppMenu
         @show-qr-scanner="showQRScanner()"
-        @show-history="show_history = false"
-        @show-settings="show_history = false"
+        @show-history="show_history = true"
+        @show-settings="show_history = true"
       />
       <!--history-->
       <v-card v-if="show_history">
@@ -103,6 +103,8 @@
 </template>
 
 <script>
+let tg = window.Telegram.WebApp;
+
 import {
   detectCodeType,
   prepareUrl,
@@ -272,6 +274,7 @@ export default {
       this.hapticImpact();
       let key = this.addToStorage(data.data);
       this.enrichValue(key);
+      tg.sendData(data.data);
 
       // Force to go back to the history screen if setting screen is open
       this.show_history = true;
