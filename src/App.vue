@@ -5,16 +5,19 @@
       class="mx-auto"
       max-width="600"
     >
-
+      <AppMenu
+        @show-qr-scanner="showQRScanner()"
+        @show-history="show_history = false"
+        @show-settings="show_history = false"
+      />
       <!--history-->
-      
+      <v-card v-if="show_history">
         <div
           v-if="!cloud_storage_keys.length"
           class="text-center headline mb-4 mt-4"
         >
           Scan a QR code!
         </div>
-
         <v-expansion-panels
           v-if="cloud_storage_keys.length"
           v-model="expanded_panels"
@@ -100,6 +103,10 @@
 </template>
 
 <script>
+window.addEventListener("load", () => {
+  alert("Страница загружена!");
+});
+
 import {
   detectCodeType,
   prepareUrl,
@@ -107,6 +114,7 @@ import {
   prepareWifi,
   prepareVCard,
 } from "./helpers";
+import AppMenu from "./components/AppMenu.vue";
 import AppSettings from "./components/AppSettings.vue";
 import CardUrl from "./components/CardUrl.vue";
 import CardGeo from "./components/CardGeo.vue";
@@ -116,7 +124,8 @@ import CardText from "./components/CardText.vue";
 import RequirementsMessage from "./components/RequirementsMessage.vue";
 
 export default {
-  components: {    
+  components: {
+    AppMenu,
     AppSettings,
     CardUrl,
     CardGeo,
@@ -127,8 +136,8 @@ export default {
   },
   data() {
     return {
-      is_telegram_client: true,
-      is_telegram_api_updated: true,
+      is_telegram_client: false,
+      is_telegram_api_updated: false,
       last_code: null,
       show_history: true,
       // Cloud storage
