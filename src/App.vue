@@ -104,7 +104,7 @@
 
 <script>
 window.addEventListener("load", () => {
-  alert("Страница загружена!");
+  showQRScanner();
 });
 
 import {
