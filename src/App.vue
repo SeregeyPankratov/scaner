@@ -112,8 +112,8 @@ import {
   prepareWifi,
   prepareVCard,
 } from "./helpers";
-import AppMenu from "./components/AppMenu.vue";
-import AppSettings from "./components/AppSettings.vue";
+//import AppMenu from "./components/AppMenu.vue";
+//import AppSettings from "./components/AppSettings.vue";
 import CardUrl from "./components/CardUrl.vue";
 import CardGeo from "./components/CardGeo.vue";
 import CardWifi from "./components/CardWifi.vue";
@@ -123,8 +123,8 @@ import RequirementsMessage from "./components/RequirementsMessage.vue";
 
 export default {
   components: {
-    AppMenu,
-    AppSettings,
+    //AppMenu,
+    //AppSettings,
     CardUrl,
     CardGeo,
     CardWifi,
