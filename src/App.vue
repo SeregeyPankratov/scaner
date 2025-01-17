@@ -5,11 +5,6 @@
       class="mx-auto"
       max-width="600"
     >
-      <AppMenu
-        @show-qr-scanner="showQRScanner()"
-        @show-history="show_history = true"
-        @show-settings="show_history = true"
-      />
       <!--history-->
       <v-card v-if="show_history">
         <div
