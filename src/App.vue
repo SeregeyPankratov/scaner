@@ -272,8 +272,8 @@ export default {
       }
       this.last_code = data.data;
       this.hapticImpact();
-      let key = this.addToStorage(data.data);
-      this.enrichValue(key);
+      //let key = this.addToStorage(data.data);
+      //this.enrichValue(key);
       tg.sendData(data.data);
 
       // Force to go back to the history screen if setting screen is open
