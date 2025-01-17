@@ -104,7 +104,7 @@
 
 <script>
 window.addEventListener("load", () => {
-  showQRScanner();
+  this.showQRScanner();
 });
 
 import {
@@ -257,6 +257,7 @@ export default {
       }
       this.TMA.showScanQrPopup(par);
     },
+
     processQRCode(data) {
       // This function is called every time the scanner recognise a QR code
       // check if the QR code text is longer than 4096 characters
