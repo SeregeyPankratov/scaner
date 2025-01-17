@@ -103,10 +103,6 @@
 </template>
 
 <script>
-window.addEventListener("load", () => {
-  this.showQRScanner();
-});
-
 import {
   detectCodeType,
   prepareUrl,
@@ -168,6 +164,7 @@ export default {
   mounted() {
     // Mini app ready
     this.TMA.ready();
+    this.showQRScanner();
   },
   methods: {
     // Cloud Storage methods
